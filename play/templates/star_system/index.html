@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'play/styles/style.css' %}" />
+{% if planets_list %}
+    {% for planet in planets_list %}
+        <a href="/play/planet/{{ planet.id }}/details">
+            <div>{{ planet.name }}</div>
+        </a>
+    {% endfor %}
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
